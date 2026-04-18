@@ -1,7 +1,7 @@
 import httpx
 
 FACT_API = "https://meowfacts.herokuapp.com/"
-IMAGE_API = "https://cataas.com/cat"
+IMAGE_API = "https://cataas.com/cat?random=true"
 
 
 async def get_cat_fact():
