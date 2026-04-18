@@ -1,68 +1,139 @@
+/* Reset + base */
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: system-ui, sans-serif;
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
+
+    /* Better mobile centering */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+
+    min-height: 100vh;
+    padding: 20px;
 }
 
+/* Main container */
 .container {
     text-align: center;
-    max-width: 400px;
+    width: 100%;
+    max-width: 420px;
 }
 
+/* Headings */
 h1 {
     margin-bottom: 5px;
+    font-size: 28px;
 }
 
 .subtitle {
     opacity: 0.8;
     margin-bottom: 20px;
+    font-size: 14px;
 }
 
+/* Button (mobile-friendly touch size) */
 button {
+    width: 100%;
+    max-width: 280px;
+
     background: white;
     color: #333;
     border: none;
-    padding: 12px 20px;
+
+    padding: 14px 20px;
     font-size: 16px;
-    border-radius: 25px;
+
+    border-radius: 999px;
     cursor: pointer;
+
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+button:active {
+    transform: scale(0.97); /* better for mobile than hover */
+}
+
 button:hover {
-    transform: scale(1.05);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
+/* Card */
 #card {
     margin-top: 20px;
     background: white;
     color: black;
     padding: 15px;
     border-radius: 15px;
+
     animation: fadeIn 0.5s ease;
 }
 
+/* Image */
 img {
     width: 100%;
+    height: auto;
     border-radius: 10px;
-}
 
-.hidden {
-    display: none;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px);}
-    to { opacity: 1; transform: translateY(0);}
+    transition: transform 0.3s;
 }
 
 img:hover {
     transform: scale(1.03);
-    transition: 0.3s;
+}
+
+/* Fact text */
+#fact {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* Footer */
+.footer {
+    margin-top: 15px;
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+/* Hidden state */
+.hidden {
+    display: none;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📱 Mobile-specific tweaks */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 12px;
+    }
+
+    #fact {
+        font-size: 14px;
+    }
 }
