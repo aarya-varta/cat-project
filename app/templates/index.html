@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>🐱 Cat Fun App</title>
+    <title>CatMood 🐱</title>
     <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" href="https://cataas.com/cat">
 </head>
 <body>
 
-    <h1>🐾 Random Cat Generator</h1>
+<div class="container">
+    <h1>🐾 CatMood</h1>
+    <p class="subtitle">Tap for a random cat + fact</p>
 
-    <button onclick="getCat()">Give me a cat 😺</button>
+    <button id="cat-btn">Give me a cat 😺</button>
 
-    <div id="result">
+    <div id="card" class="hidden">
+        <img id="cat-img" src="" />
         <p id="fact"></p>
-        <img id="cat-img" src="" alt="Random Cat">
     </div>
-
-    <script src="/static/script.js"></script>
+</div>
+<p class="footer">Made with 🐾 + caffeine</p>
+<script src="/static/script.js"></script>
 </body>
 </html>
